@@ -31,20 +31,18 @@ body {
     margin: auto;
 }
 
-/* Updated Logo Styling: Flex alignment for the structural typography */
+/* Logo Alignment for Typography and the Vector Icon */
 .logo {
     color: #ffffff;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 12px; /* Precise spacing between image and letters */
-    cursor: default;
-    user-select: none;
+    gap: 8px; /* Spacing between the icon and text */
 }
 
-/* MATCHES YOUR IMAGE PRECISELY: The custom color palette and brush code vector */
+/* UPDATED: Light brown palette vector matching your layout, set beside the text */
 .logo .logo-graphic {
     width: 38px;  
     height: 38px;
@@ -52,8 +50,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23FF5E62' d='M22 25C10 25 5 38 5 53s8 32 26 32c7 0 10-4 13-4s8 4 17 0c10-5 5-22 0-31C53 34 38 25 22 25z'/><circle cx='18' cy='42' r='3.5' fill='%23FFD166'/><circle cx='30' cy='42' r='3.5' fill='%23A9B3FA'/><circle cx='17' cy='62' r='3.5' fill='%2306AED5'/><circle cx='25' cy='72' r='3.5' fill='%2364DFDF'/><path fill='%23F39A59' d='M78 12c-2-2-6-2-8 0L46 36l8 8 24-24c2-2 2-6 0-8z'/><path fill='%23780016' d='M46 36l-3 10c-1 3 1 5 3 5s5-1 6-3l3-12-9 0z'/></svg>");
-    filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.12));
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path fill='%23C69C6D' d='M22 25C10 25 5 38 5 53s8 32 26 32c7 0 10-4 13-4s8 4 17 0c10-5 5-22 0-31C53 34 38 25 22 25z'/><circle cx='18' cy='42' r='3.5' fill='%23FFD166'/><circle cx='30' cy='42' r='3.5' fill='%23A9B3FA'/><circle cx='17' cy='62' r='3.5' fill='%2306AED5'/><circle cx='25' cy='72' r='3.5' fill='%2364DFDF'/><path fill='%23E5A673' d='M78 12c-2-2-6-2-8 0L46 36l8 8 24-24c2-2 2-6 0-8z'/><path fill='%23780016' d='M46 36l-3 10c-1 3 1 5 3 5s5-1 6-3l3-12-9 0z'/></svg>");
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
 }
 
 .nav-menu a {
@@ -226,11 +224,11 @@ input[type="text"] {
     margin-top: 10px;
 }
 
-/* UPDATED: Neutral default color state so unrendered blocks stay hidden/clean */
+/* UPDATED: Neutral layout state so unrendered palette boxes stay hidden/clean dynamically */
 .colorBox {
     height: 120px;
     flex: 1;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
     color: transparent;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
