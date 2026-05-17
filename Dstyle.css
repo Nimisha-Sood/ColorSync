@@ -1,0 +1,417 @@
+/* ==========================================================================
+   ====== GLOBAL STYLES ======
+   ========================================================================== */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #ffffff; /* Clean white canvas default across all views */
+    color: #333333;
+    text-align: center;
+}
+
+/* ====== GALLERY PAGE OVERRIDE MOUNT ====== */
+.gallery-page {
+    background: #ffffff;
+}
+
+/* ==========================================================================
+   ====== NAVIGATION HEADER ======
+   ========================================================================== */
+.main-header {
+    background: linear-gradient(135deg, #ff7f51, #ffb703);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/* Vibe Matching Logo Styling with CSS-Injected Palette Icon */
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Spacing between the icon and text */
+}
+
+/* Injecting a matching palette icon before the logo text dynamically */
+.logo::before {
+    content: "🎨";
+    font-size: 24px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 12px;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* NAV UNDERLINE ANIMATION EFFECT */
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   ====== TYPOGRAPHY & HEADINGS ======
+   ========================================================================== */
+/* Dynamic Brightening Gradient Layout for ALL Primary Page Headings */
+h1 {
+    background: linear-gradient(135deg, #FF9F1C 0%, #FF595E 50%, #E76F51 100%);
+    -webkit-background-clip: text; /* Legacy Engine Render Support */
+    background-clip: text;         /* Standard Property Integration - No Editor Warnings */
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 42px;
+    letter-spacing: -1px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+h2 {
+    color: #ff7f51;
+}
+
+p {
+    width: 70%;
+    margin: auto;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   ====== LAYOUT BLOCKS & CONTAINERS ======
+   ========================================================================== */
+section {
+    margin: 30px auto;
+    width: 80%;
+}
+
+/* ====== COMPACT STRUCTURAL DATA TABLES ====== */
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td {
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   ====== GALLERY CARDS AND ROW GRID SPACING ======
+   ========================================================================== */
+.palette-card {
+    margin-bottom: 35px; /* Pushes the next color palette row down cleanly */
+}
+
+td table {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+td table:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   ====== INTERACTION INTERFACE (BUTTONS) ======
+   ========================================================================== */
+button {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(135deg, #ff595e, #ff924c);
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 18px;    /* Adds precise breathing space below the swatches/text */
+    margin-bottom: 5px;   /* Keeps separation between stacked action buttons */
+    margin-left: 4px;     /* Separates adjacent buttons horizontally */
+    margin-right: 4px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* ====== GALLERY INTERACTION ACCENTS ====== */
+#randomPaletteButton {
+    margin-left: 10px;
+}
+
+/* ==========================================================================
+   ====== SAVED CONFIGURATION PAGE ELEMENTS ======
+   ========================================================================== */
+main table {
+    width: 80%;
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+main table:hover {
+    transform: translateY(-5px);
+}
+
+main table tr:first-child td {
+    background: linear-gradient(135deg, #ff7f51, #ff595e);
+    color: #ffffff;
+    font-size: 18px;
+}
+
+main table tr:last-child td {
+    background: #f8f8f8;
+}
+
+/* ==========================================================================
+   ====== INPUT STYLING MATRIX ======
+   ========================================================================== */
+input[type="text"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cccccc;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   ====== LIGHT / DARK TOGGLE SYSTEM ======
+   ========================================================================== */
+.input-section {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.palette {
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.colorBox {
+    height: 120px;
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Dynamic Hex Input Color Selectors */
+.colorInput {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 12px;
+    margin: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.colorInput:hover {
+    transform: scale(1.1);
+}
+
+.darkPreview {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.darkPreview h2 {
+    color: rgb(233, 127, 82);
+}
+
+/* ==========================================================================
+   ====== PALETTE GENERATOR MODULES ======
+   ========================================================================== */
+.palette-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.palette-section:hover {
+    transform: translateY(-5px);
+}
+
+#complementaryPalette,
+#analogousPalette,
+#monochromaticPalette {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+#complementaryPalette div,
+#analogousPalette div,
+#monochromaticPalette div {
+    height: 100px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#complementaryPalette div:hover,
+#analogousPalette div:hover,
+#monochromaticPalette div:hover {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   ====== GRADIENT ENGINE CONTROL PANELS ======
+   ========================================================================== */
+#gradientPreview {
+    height: 150px;
+    border-radius: 15px;
+    margin-top: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+#cssCode {
+    background: #222222;
+    color: #00ffcc;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+    font-family: monospace;
+}
+
+/* ==========================================================================
+   ====== INTERFACE DATA ENTRY FORMS ======
+   ========================================================================== */
+.form-section {
+    background: #f5f5f5;
+    padding: 25px;
+    border-radius: 15px;
+    width: 60%;
+    margin: 40px auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-section input,
+.form-section select {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   ====== DYNAMIC NOTIFICATION SYSTEM (TOAST) ======
+   ========================================================================== */
+#toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222222;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1000;
+}
+
+/* ==========================================================================
+   ====== CLOSING FOOTER ELEMENTS ======
+   ========================================================================== */
+.main-footer {
+    background: #222222;
+    color: #ffffff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.copyright {
+    color: #cccccc;
+}
+
+/* ==========================================================================
+   ====== CORE RENDER ANIMATIONS ======
+   ========================================================================== */
+.palette, .palette-section, table {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading Ambient Pulse Animation Map */
+@keyframes pulseGlow {
+    0% { filter: drop-shadow(0 2px 4px rgba(255, 159, 28, 0.15)); }
+    100% { filter: drop-shadow(0 4px 12px rgba(255, 89, 94, 0.35)); }
+}
+
+/* ==========================================================================
+   ====== RESPONSIVE MEDIA BREAKPOINTS ======
+   ========================================================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    p {
+        width: 90%;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    main table {
+        width: 95%;
+    }
+
+    .form-section {
+        width: 90%;
+    }
+}

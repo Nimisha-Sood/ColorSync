@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Preview</title>
+    <link rel="stylesheet" href="Dstyle.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="nav-container">
+        <h2 class="logo">
+            <span class="logo-graphic"></span>
+            ColorSync
+        </h2>
+        
+        <nav class="nav-menu">
+            <a href="Ngenerator.html">Generator</a>
+            <a href="Ngradient.html">Gradient</a>
+            <a href="Dlightdark.html">LightDark</a>
+            <a href="Agallery.html">Gallery</a>
+            <a href="Asaved.html">Saved</a>
+        </nav>
+    </div>
+</header>
+
+    <main class="content-wrapper">
+        
+        <section class="intro-section">
+            <h1>Light-Dark Preview</h1>
+            <p>Watch your favorite color palettes in Dark and Light preview.</p>
+        </section>
+
+        <section class="input-section">
+            <input type="color" class="colorInput" value="#FF6B6B" aria-label="Color 1">
+            <input type="color" class="colorInput" value="#FFD93D" aria-label="Color 2">
+            <input type="color" class="colorInput" value="#6BCB77" aria-label="Color 3">
+            <input type="color" class="colorInput" value="#4D96FF" aria-label="Color 4">
+            <input type="color" class="colorInput" value="#843B62" aria-label="Color 5">
+
+            <button id="previewBtn">Preview Palette</button>
+        </section>
+
+        <hr>
+
+        <section class="preview-section">
+            <h2>Light UI Preview</h2>
+            <div class="palette light" id="lightPalette">
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+            </div>
+        </section>
+
+        <section class="preview-section darkPreview">
+            <h2>Dark UI Preview</h2>
+            <div class="palette dark" id="darkPalette">
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+                <div class="colorBox"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
+        <p class="copyright">&copy; 2026 ColorSync | Designed for creative color exploration</p>
+    </footer>
+
+    <script src="Dlightdark.js"></script>
+</body>
+</html>
