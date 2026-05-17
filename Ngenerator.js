@@ -11,6 +11,7 @@ let toast=document.getElementById("toast");
 colorPicker.addEventListener("input",()=>{
     hexInput.value=colorPicker.value;
 });
+
 hexInput.addEventListener("input",()=>{
     let value=hexInput.value;
     let hexPattern=/^#[0-9A-Fa-f]{6}$/;
@@ -37,18 +38,13 @@ function generateAllPalettes(base){
     generateComplementary(base);
     generateAnalogous(base);
     generateMonochromatic(base);
-
 }
 
 // ===== COMPLEMENTARY =====
 function generateComplementary(color){
     let hsl=hexToHSL(color);
     let complementaryHue=(hsl.h+180)%360;
-    let complementaryColor=HSLToHex(
-        complementaryHue,
-        hsl.s,
-        hsl.l
-    );
+    let complementaryColor=HSLToHex(complementaryHue, hsl.s, hsl.l);
     createBox(color,compDiv);
     createBox(complementaryColor,compDiv);
 }
@@ -56,17 +52,9 @@ function generateComplementary(color){
 // ===== ANALOGOUS =====
 function generateAnalogous(color){
     let hsl=hexToHSL(color);
-    let color1=HSLToHex(
-        (hsl.h-30+360)%360,
-        hsl.s,
-        hsl.l
-    );
+    let color1=HSLToHex((hsl.h-30+360)%360, hsl.s, hsl.l);
     let color2=color;
-    let color3=HSLToHex(
-        (hsl.h+30)%360,
-        hsl.s,
-        hsl.l
-    );
+    let color3=HSLToHex((hsl.h+30)%360, hsl.s, hsl.l);
     createBox(color1,anaDiv);
     createBox(color2,anaDiv);
     createBox(color3,anaDiv);
@@ -75,26 +63,11 @@ function generateAnalogous(color){
 // ===== MONOCHROMATIC =====
 function generateMonochromatic(color){
     let hsl=hexToHSL(color);
-    createBox(
-        HSLToHex(hsl.h,hsl.s,20),
-        monoDiv
-    );
-    createBox(
-        HSLToHex(hsl.h,hsl.s,35),
-        monoDiv
-    );
-    createBox(
-        HSLToHex(hsl.h,hsl.s,50),
-        monoDiv
-    );
-    createBox(
-        HSLToHex(hsl.h,hsl.s,65),
-        monoDiv
-    );
-    createBox(
-        HSLToHex(hsl.h,hsl.s,80),
-        monoDiv
-    );
+    createBox(HSLToHex(hsl.h,hsl.s,20),monoDiv);
+    createBox(HSLToHex(hsl.h,hsl.s,35),monoDiv);
+    createBox(HSLToHex(hsl.h,hsl.s,50),monoDiv);
+    createBox(HSLToHex(hsl.h,hsl.s,65),monoDiv);
+    createBox(HSLToHex(hsl.h,hsl.s,80),monoDiv);
 }
 
 // ===== CREATE BOX =====
@@ -118,7 +91,7 @@ paletteForm.addEventListener("submit",(e)=>{
     let paletteName=document.getElementById("paletteName").value;
     let category=document.getElementById("paletteCategory").value;
     let creator=document.getElementById("creatorName").value;
-    if(paletteName.trim()===""|| category===""|| creator.trim()==="") {
+    if(paletteName.trim()===""||category===""||creator.trim()===""){
         showToast("Please fill the form!");
         return;
     }
@@ -127,22 +100,20 @@ paletteForm.addEventListener("submit",(e)=>{
     if(category==="complementary"){
         let hsl=hexToHSL(base);
         let complementaryHue=(hsl.h+180)%360;
-        palette=[base, HSLToHex(complementaryHue,hsl.s,hsl.l)];
+        palette=[base,HSLToHex(complementaryHue,hsl.s,hsl.l)];
     }
     else if(category==="analogous"){
         let hsl=hexToHSL(base);
-        palette=[HSLToHex((hsl.h-30+360)%360,hsl.s,hsl.l), base, HSLToHex((hsl.h+30)%360,hsl.s,hsl.l)];
+        palette=[HSLToHex((hsl.h-30+360)%360,hsl.s,hsl.l),base,HSLToHex((hsl.h+30)%360,hsl.s,hsl.l)];
     }
     else if(category==="monochromatic"){
         let hsl=hexToHSL(base);
-        palette=[HSLToHex(hsl.h,hsl.s,20), HSLToHex(hsl.h,hsl.s,35), HSLToHex(hsl.h,hsl.s,50), HSLToHex(hsl.h,hsl.s,65), HSLToHex(hsl.h,hsl.s,80)];
+        palette=[HSLToHex(hsl.h,hsl.s,20),HSLToHex(hsl.h,hsl.s,35),HSLToHex(hsl.h,hsl.s,50),HSLToHex(hsl.h,hsl.s,65),HSLToHex(hsl.h,hsl.s,80)];
     }
-    let saved=JSON.parse(localStorage.getItem("palettes"))||[];
-    saved.push({type:category, name:paletteName, creator:creator, colors:palette});
-    localStorage.setItem(
-        "palettes",
-        JSON.stringify(saved)
-    );
+    let saved=
+    JSON.parse(localStorage.getItem("userPalettes"))||[];
+    saved.push({type:category,name:paletteName,creator:creator,colors:palette});
+    localStorage.setItem("userPalettes",JSON.stringify(saved));
     showToast("Palette Saved!");
     paletteForm.reset();
 });
@@ -166,7 +137,8 @@ function hexToHSL(hex){
     let h,s,l;
     l=(max+min)/2;
     if(max===min){
-        h=s=0;
+        h=0;
+        s=0;
     }
     else{
         let d=max-min;
@@ -177,11 +149,9 @@ function hexToHSL(hex){
             case r:
                 h=(g-b)/d+(g<b?6:0);
                 break;
-
             case g:
                 h=(b-r)/d+2;
                 break;
-
             case b:
                 h=(r-g)/d+4;
                 break;
@@ -239,9 +209,9 @@ function HSLToHex(h,s,l){
     g=Math.round((g+m)*255);
     b=Math.round((b+m)*255);
     return"#"+
-    r.toString(16).padStart(2,'0')+
-    g.toString(16).padStart(2,'0')+
-    b.toString(16).padStart(2,'0');
+    r.toString(16).padStart(2,"0")+
+    g.toString(16).padStart(2,"0")+
+    b.toString(16).padStart(2,"0");
 }
 
 // ===== CONTRAST =====

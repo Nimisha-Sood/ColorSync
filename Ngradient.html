@@ -5,70 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gradient</title>
     <link rel="stylesheet" href="Dstyle.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
 </head>
 <body>
 
 <!-- Header -->
 <header class="main-header">
-    <div class="nav-container">
-        <h2 class="logo">
-            <span class="logo-graphic"></span>
-            ColorSync
-        </h2>
-        
-        <nav class="nav-menu">
-            <a href="Ngenerator.html">Generator</a>
-            <a href="Ngradient.html">Gradient</a>
-            <a href="Dlightdark.html">LightDark</a>
-            <a href="Agallery.html">Gallery</a>
-            <a href="Asaved.html">Saved</a>
-        </nav>
-    </div>
+<div class="nav-container">
+<h2 class="logo">ColorSync</h2>
+<nav class="nav-menu">
+<a href="Ngenerator.html">Generator</a>
+<a href="Ngradient.html">Gradient</a>
+<a href="Dlightdark.html">LightDark</a>
+<a href="Agallery.html">Gallery</a>
+<a href="Asaved.html">Saved</a>
+</nav>
+</div>
 </header>
+
 <!-- Title Section -->
 <section>
-    <h1>Gradient Generator</h1>
-    <p>Create beautiful gradients using two colors.</p>
+<h1>Gradient Generator</h1>
+<p>Create beautiful gradients using different colors, directions and styles.</p>
 </section>
 
-<!-- Color Selection Section -->
+<!-- Gradient Controls -->
 <section>
-    <h2>Select Colors</h2>
-    <div>
-        <label for="color1">First Color:</label>
-        <input type="color" id="color1">
-    </div>
-    <br>
-    <div>
-        <label for="color2">Second Color:</label>
-        <input type="color" id="color2">
-    </div>
-    <br>
-    <button id="generateGradientButton">Generate Gradient</button>
+<h2>Select Colors</h2>
+<div>
+<label for="color1">First Color:</label>
+<input type="color" id="color1">
+</div>
+<br>
+<div>
+<label for="color2">Second Color:</label>
+<input type="color" id="color2">
+</div>
+<br>
+
+<!-- Gradient Type -->
+<div>
+<label for="gradientType">Gradient Type:</label>
+<select id="gradientType">
+<option value="linear">Linear</option>
+<option value="radial">Radial</option>
+</select>
+</div>
+<br>
+
+<!-- Direction -->
+<div>
+<label for="direction">Direction:</label>
+<select id="direction">
+<option value="to right">To Right</option>
+<option value="to left">To Left</option>
+<option value="to bottom">To Bottom</option>
+<option value="to top right">Top Right</option>
+<option value="to bottom right">Bottom Right</option>
+</select>
+</div>
+<br>
+
+<!-- Angle Slider -->
+<div>
+<label for="angleSlider">
+Angle:
+<span id="angleValue">90</span>
+</label>
+<br><br>
+<input type="range" id="angleSlider" min="0" max="360" value="90">
+</div>
+<br>
+<button id="generateGradientButton">Generate Gradient</button>
 </section>
 
-<!-- Gradient Preview Section -->
+<!-- Gradient Preview -->
 <section>
-    <h2>Gradient Preview</h2>
-    <div id="gradientPreview"></div>
+<h2>Gradient Preview</h2>
+<div id="gradientPreview"></div>
 </section>
 
-<!-- CSS Code Display Section -->
+<!-- CSS Code -->
 <section>
-    <h2>CSS Code</h2>
-    <p id="cssCode">linear-gradient(to right, #000000, #ffffff)</p>
-    <button id="copyCodeButton">Copy Code</button>
+<h2>CSS Code</h2>
+<p id="cssCode">linear-gradient(to right, #000000, #ffffff)</p>
+<button id="copyCodeButton">Copy Code</button>
 </section>
+
+<!-- Toast -->
+<div id="toast"></div>
 
 <!-- Footer -->
 <footer class="main-footer">
-<p class="footer-text">
-Explore the harmony of colors — where creativity meets perfect palettes.
-</p>
-<p class="copyright">
-© 2026 ColorSync | Designed for creative color exploration
-</p>
+<p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
+<p class="copyright">© 2026 ColorSync | Designed for creative color exploration</p>
 </footer>
 
 <script src="Ngradient.js"></script>
