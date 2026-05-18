@@ -2,7 +2,6 @@
 let color1=document.getElementById("color1");
 let color2=document.getElementById("color2");
 let gradientType=document.getElementById("gradientType");
-let direction=document.getElementById("direction");
 let angleSlider=document.getElementById("angleSlider");
 let angleValue=document.getElementById("angleValue");
 let generateBtn=document.getElementById("generateGradientButton");
@@ -26,7 +25,6 @@ function generateGradient(){
     let c1=color1.value;
     let c2=color2.value;
     let type=gradientType.value;
-    let dir=direction.value;
     let angle=angleSlider.value;
     let gradient="";
     if(type==="linear"){gradient="linear-gradient("+angle+"deg, "+c1+", "+c2+")";
