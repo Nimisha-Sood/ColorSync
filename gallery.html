@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palette Paradise | ColorSync</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+    <!--HEADER / NAVIGATION-->
+    <header class="main-header">
+        <div class="nav-container">
+
+            <div class="logo">
+                <span class="logo-graphic"></span>
+                ColorSync
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html">Generator</a>
+                <a href="gradient.html">Gradient</a>
+                <a href="lightdark.html">UI Preview</a>
+                <a href="image.html">Image Extractor</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="saved.html">Saved</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!--MAIN CONTENT-->
+    <main class="content-wrapper">
+
+        <!--PAGE INTRO-->
+        <section class="intro-section">
+            <h1 class="bright-heading">Palette Paradise</h1>
+            <p>Welcome to <strong>Palette Paradise</strong>, a creative gallery celebrating the beauty of colors. Explore warm palettes, cool palettes, and artistic combinations used by designers to create visually appealing interfaces and designs.</p>
+        </section>
+
+        <!--WARM COLOR PALETTES-->
+        <section class="palette-group">
+            <h2>Warm Color Palettes</h2>
+            <p>Warm colors remind us of sunshine, fire, and sunsets. These colors create feelings of warmth, excitement, and energy.</p>
+
+            <!-- Palette Grid -->
+            <div class="palette-grid">
+
+                <!--PALETTE CARD 1-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #FF595E;" data-color="#FF595E">Red Rose (#FF595E)</div>
+                        <div class="swatch" style="background-color: #FF924C;" data-color="#FF924C">Sunset Orange (#FF924C)</div>
+                        <div class="swatch" style="background-color: #FFCA3A;" data-color="#FFCA3A">Golden Yellow (#FFCA3A)</div>
+                        <div class="swatch" style="background-color: #FF7F51;" data-color="#FF7F51">Coral Glow (#FF7F51)</div>
+                        <div class="swatch" style="background-color: #D4483B;" data-color="#D4483B">Fiery Amber (#D4483B)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Sunset Glow
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Inspired by beautiful sunset skies.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+
+                <!--PALETTE CARD 2-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #FFADAD;" data-color="#FFADAD">Soft Rose (#FFADAD)</div>
+                        <div class="swatch" style="background-color: #FFD6A5;" data-color="#FFD6A5">Peach Cream (#FFD6A5)</div>
+                        <div class="swatch" style="background-color: #FDFFB6;" data-color="#FDFFB6">Warm Lemon (#FDFFB6)</div>
+                        <div class="swatch" style="background-color: #FF8FAB;" data-color="#FF8FAB">Blush Pink (#FF8FAB)</div>
+                        <div class="swatch" style="background-color: #FFE5D9;" data-color="#FFE5D9">Apricot Cream (#FFE5D9)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Sweet Pastel Warmth
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Soft warm tones used in friendly designs.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+
+                <!--PALETTE CARD 3-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #9D0208;" data-color="#9D0208">Deep Crimson (#9D0208)</div>
+                        <div class="swatch" style="background-color: #D00000;" data-color="#D00000">Fire Red (#D00000)</div>
+                        <div class="swatch" style="background-color: #F48C06;" data-color="#F48C06">Burnt Orange (#F48C06)</div>
+                        <div class="swatch" style="background-color: #FFBA08;" data-color="#FFBA08">Amber Gold (#FFBA08)</div>
+                        <div class="swatch" style="background-color: #6A040F;" data-color="#6A040F">Crimson Blaze (#6A040F)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Fire Energy
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Bold colors representing strength and passion.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+            </div>
+        </section>
+
+        <!--COOL COLOR PALETTES-->
+        <section class="palette-group">
+            <h2>Cool Color Palettes</h2>
+            <p>Cool colors remind us of oceans, forests, and calm skies. These palettes create peaceful and relaxing visual experiences.</p>
+
+            <!-- Palette Grid -->
+            <div class="palette-grid">
+
+                <!--PALETTE CARD 4-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #48CAE4;" data-color="#48CAE4">Sky Blue (#48CAE4)</div>
+                        <div class="swatch" style="background-color: #00B4D8;" data-color="#00B4D8">Ocean Blue (#00B4D8)</div>
+                        <div class="swatch" style="background-color: #0096C7;" data-color="#0096C7">Deep Sea Blue (#0096C7)</div>
+                        <div class="swatch" style="background-color: #0077B6;" data-color="#0077B6">Marine Blue (#0077B6)</div>
+                        <div class="swatch" style="background-color: #03045E;" data-color="#03045E">Deep Aquatic (#03045E)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Ocean Depths
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Colors inspired by the sea.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+
+                <!--PALETTE CARD 5-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #80ED99;" data-color="#80ED99">Fresh Mint (#80ED99)</div>
+                        <div class="swatch" style="background-color: #57CC99;" data-color="#57CC99">Leaf Green (#57CC99)</div>
+                        <div class="swatch" style="background-color: #38A3A5;" data-color="#38A3A5">Forest Teal (#38A3A5)</div>
+                        <div class="swatch" style="background-color: #22577A;" data-color="#22577A">Deep Teal (#22577A)</div>
+                        <div class="swatch" style="background-color: #1BF5A9;" data-color="#1BF5A9">Sage Shadow (#1BF5A9)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Nature Calm
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Inspired by forests and greenery.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+
+                <!--PALETTE CARD 6-->
+                <article class="palette-card">
+                    <div class="color-swatch-container">
+                        <div class="swatch" style="background-color: #A0C4FF;" data-color="#A0C4FF">Soft Blue (#A0C4FF)</div>
+                        <div class="swatch" style="background-color: #BDB2FF;" data-color="#BDB2FF">Lavender Blue (#BDB2FF)</div>
+                        <div class="swatch" style="background-color: #CDB4DB;" data-color="#CDB4DB">Purple Mist (#CDB4DB)</div>
+                        <div class="swatch" style="background-color: #9BF6FF;" data-color="#9BF6FF">Ice Aqua (#9BF6FF)</div>
+                        <div class="swatch" style="background-color: #4A90E2;" data-color="#4A90E2">Arctic Ice (#4A90E2)</div>
+                    </div>
+                    <div class="palette-info">
+                        <strong>Palette Name:</strong>
+                        Winter Breeze
+                        <br>
+                        <span>
+                            <strong>Inspiration:</strong>
+                            Calm winter sky tones.
+                        </span>
+                    </div>
+                    <button class="btn-save" onclick="savePalette(this)">Save</button>
+                    <button class="btn-preview" onclick="previewPalette(this)">Preview</button>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!--FOOTER-->
+    <footer class="main-footer">
+        <p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
+        <p class="copyright">&copy; 2026 ColorSync | Designed for creative color exploration</p>
+    </footer>
+
+    <!--JAVASCRIPT-->
+    <script src="gallery.js"></script>
+
+</body>
+</html>

@@ -3,52 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Color Palette Generator</title>
-
-  <link rel="stylesheet" href="Dstyle.css">
+  <title>ColorSync | Image Extractor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
 </head>
 <body>
-<nav class="nav-menu">
-<a href="index.html">Generator</a>
-<a href="Ngradient.html">Gradient</a>
-<a href="Dlightdark.html">UI Preview</a>
-<a href="Agallery.html">Gallery</a>
-<a href="Asaved.html">Saved</a>
-<a href="image.html">Image extractor</a>
-</nav>
 
-  <div class="container">
+  <!--HEADER / NAVIGATION-->
+  <header class="main-header">
+    <div class="nav-container">
 
-    <h1>Image Color Palette Generator</h1>
+      <div class="logo">
+        <span class="logo-graphic"></span>
+          ColorSync
+      </div>
 
-    <!-- Upload Button -->
-    <div class="upload-box">
-
-      <button id="uploadBtn">
-        Choose Image
-      </button>
-
-      <input type="file" id="imageInput" accept="image/*">
+      <nav class="nav-menu">
+        <a href="index.html">Generator</a>
+        <a href="gradient.html">Gradient</a>
+        <a href="lightdark.html">UI Preview</a>
+        <a href="image.html">Image Extractor</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="saved.html">Saved</a>
+      </nav>
 
     </div>
+  </header>
 
-    <!-- Image Preview -->
-    <div class="preview-section">
 
-      <img id="previewImage">
+  <!--MAIN CONTENT-->
+  <main class="image-page-container">
 
-      <div class="hover-circle"></div>
+  <!--PAGE INTRO-->
+    <section class="page-intro">
+      <h1>Image Color Palette Generator</h1>
+      <p>Upload an image and extract beautiful color palettes instantly.</p>
+    </section>
 
-    </div>
+  <!--IMAGE UPLOAD SECTION-->
+    <section class="upload-section">
+      <div class="upload-box">
+        <button id="uploadBtn">Choose Image</button>
+        <input type="file" id="imageInput" accept="image/*">
+      </div>
+    </section>
 
-    <!-- Color Palette -->
-    <div class="palette-container" id="paletteContainer"></div>
+  <!--IMAGE PREVIEW SECTION-->
+    <section class="preview-section">
+      <div class="image-preview-wrapper">
+        <img id="previewImage" alt="Uploaded Preview">
+        <div class="hover-circle"></div>
+      </div>
+    </section>
 
-  </div>
+  <!--EXTRACTED COLOR PALETTE-->
+    <section class="palette-results-section">
+      <h2>Extracted Colors</h2>
+      <div class="palette-container" id="paletteContainer"></div>
+    </section>
+
+  </main>
+
+
+  <!--FOOTER-->
+  <footer class="main-footer">
+    <p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
+    <p class="copyright">&copy; 2026 ColorSync | Designed for creative color exploration</p>
+  </footer>
+
+
+  <!--EXTERNAL LIBRARY-->
   <script src="https://cdn.jsdelivr.net/npm/color-namer/dist/color-namer.min.js"></script>
 
-  <script src="script.js"></script>
+
+  <!--JAVASCRIPT-->
+  <script src="image.js"></script>
 
 </body>
 </html>

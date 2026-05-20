@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorSync | Gradient Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+    <!--HEADER / NAVIGATION-->
+    <header class="main-header">
+        <div class="nav-container">
+
+            <div class="logo">
+                <span class="logo-graphic"></span>
+                ColorSync
+            </div>
+
+            <nav class="nav-menu">
+                <a href="index.html">Generator</a>
+                <a href="gradient.html">Gradient</a>
+                <a href="lightdark.html">UI Preview</a>
+                <a href="image.html">Image Extractor</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="saved.html">Saved</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!--PAGE INTRO-->
+    <section class="page-intro">
+        <h1>Gradient Generator</h1>
+        <p>Create beautiful gradients using different colors, styles, and directions.</p>
+    </section>
+
+
+    <!--GRADIENT CONTROLS-->
+    <section class="generator-section">
+        <h2>Gradient Controls</h2>
+        <div class="generator-controls">
+
+            <div class="input-group">
+                <label for="color1">First Color</label>
+                <input type="color" id="color1" value="#ff7f51">
+            </div>
+
+            <div class="input-group">
+                <label for="color2">Second Color</label>
+                <input type="color" id="color2" value="#ffb703">
+            </div>
+
+            <div class="input-group">
+                <label for="gradientType">Gradient Type</label>
+                <select id="gradientType">
+                    <option value="linear">Linear</option>
+                    <option value="radial">Radial</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="angleSlider">
+                    Angle:
+                    <span id="angleValue">90</span>°
+                </label>
+                <input type="range" id="angleSlider" min="0" max="360" value="90">
+            </div>
+            
+            <button id="generateGradientButton">Generate Gradient</button>
+
+        </div>
+    </section>
+
+
+    <!--GRADIENT PREVIEW-->
+    <section class="preview-section-wrapper">
+        <h2>Gradient Preview</h2>
+        <div id="gradientPreview"></div>
+    </section>
+
+    
+    <!--CSS OUTPUT-->
+    <section class="css-section">
+        <h2>CSS Code</h2>
+        <p id="cssCode">linear-gradient(to right, #000000, #ffffff)</p>
+        <button id="copyCodeButton">Copy Code</button>
+    </section>
+
+
+    <!--TOAST NOTIFICATION-->
+    <div id="toast"></div>
+
+
+    <!--FOOTER-->
+    <footer class="main-footer">
+        <p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
+        <p class="copyright">&copy; 2026 ColorSync | Designed for creative color exploration</p>
+    </footer>
+
+
+    <!--JAVASCRIPT-->
+    <script src="gradient.js"></script>
+
+</body>
+</html>

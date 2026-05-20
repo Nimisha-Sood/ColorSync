@@ -3,104 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palette Generator</title>
-    <link rel="stylesheet" href="Dstyle.css">
+    <title>ColorSync | Palette Generator</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
 </head>
-
 <body>
-<!-- ===== HEADER ===== -->
-<header class="main-header">
-    <div class="nav-container">
-        <h2 class="logo">
-            <span class="logo-graphic"></span>
-            ColorSync
-        </h2>
-        
-        <nav class="nav-menu">
-            <a href="index.html">Generator</a>
-            <a href="Ngradient.html">Gradient</a>
-            <a href="Dlightdark.html">UI Preview</a>
-            <a href="Agallery.html">Gallery</a>
-            <a href="Asaved.html">Saved</a>
-            <a href="image.html">Image extractor</a>
-        </nav>
-    </div>
-</header>
 
-<!-- ===== TITLE SECTION ===== -->
-<section>
-    <h1>Palette Generator</h1>
-    <p>Generate beautiful color palettes using a base color.</p>
-</section>
+    <!--HEADER / NAVIGATION-->
+    <header class="main-header">
+        <div class="nav-container">
 
-<!-- ===== COLOR INPUT SECTION ===== -->
-<section class="generator-section">
-    <h2>Select Base Color</h2>
-    <input type="color" id="colorPicker" value="#ff5733">
-    <input type="text" id="hexInput" placeholder="#ff5733">
-    <button id="generatePaletteButton">Generate Palette</button>
-</section>
+            <div class="logo">
+                <span class="logo-graphic"></span>
+                ColorSync
+            </div>
 
-<!-- ===== GENERATED PALETTES ===== -->
-<section>
-    <h2>Generated Palettes</h2>
+            <nav class="nav-menu">
+                <a href="index.html">Generator</a>
+                <a href="gradient.html">Gradient</a>
+                <a href="lightdark.html">UI Preview</a>
+                <a href="image.html">Image Extractor</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="saved.html">Saved</a>
+            </nav>
 
-    <!-- Complementary -->
-    <div class="palette-section">
-        <h3>Complementary</h3>
-        <div id="complementaryPalette"></div>
-    </div>
+        </div>
+    </header>
 
-    <!-- Analogous -->
-    <div class="palette-section">
-        <h3>Analogous</h3>
-        <div id="analogousPalette"></div>
-    </div>
 
-    <!-- Monochromatic -->
-    <div class="palette-section">
-        <h3>Monochromatic</h3>
-        <div id="monochromaticPalette"></div>
-    </div>
-</section>
+    <!--PAGE INTRO-->
+    <section class="page-intro">
+        <h1>Palette Generator</h1>
+        <p>Generate beautiful and harmonious color palettes using a single base color.</p>
+    </section>
 
-<!-- ===== SAVE FORM ===== -->
-<section class="form-section">
-    <h2>Save Palette</h2>
 
-    <form id="paletteForm">
-        <!-- Palette Name -->
-        <input type="text" id="paletteName" placeholder="Enter Palette Name" required>
+    <!--COLOR GENERATOR SECTION-->
+    <section class="generator-section">
+        <h2>Select Base Color</h2>
+        <div class="generator-controls">
 
-        <!-- Palette Type -->
-        <select id="paletteCategory" required>
-            <option value="">Select Palette Type</option>
-            <option value="complementary">Complementary</option>
-            <option value="analogous">Analogous</option>
-            <option value="monochromatic">Monochromatic</option>
-        </select>
+            <div class="input-group">
+                <label for="colorPicker">Choose Color</label>
+                <input type="color" id="colorPicker" value="#ff5733">
+            </div>
 
-        <!-- Creator Name -->
-        <input type="text" id="creatorName" placeholder="Created By" required>
+            <div class="input-group">
+                <label for="hexInput">HEX Code</label>
+                <input type="text" id="hexInput"placeholder="#ff5733">
+            </div>
 
-        <!-- Save Button -->
-        <button type="submit" id="savePaletteButton">Save</button>
-    </form>
+            <button id="generatePaletteButton">Generate Palette</button>
 
-</section>
+        </div>
+    </section>
 
-<!-- ===== TOAST MESSAGE ===== -->
-<div id="toast"></div>
 
-<!-- ===== FOOTER ===== -->
-<footer class="main-footer">
+    <!--GENERATED PALETTES-->
+    <section class="palette-display-section">
+        <h2>Generated Palettes</h2>
+
+        <!--COMPLEMENTARY PALETTE-->
+        <div class="palette-section">
+            <h3>Complementary</h3>
+            <div id="complementaryPalette"></div>
+        </div>
+
+        <!--ANALOGOUS PALETTE-->
+        <div class="palette-section">
+            <h3>Analogous</h3>
+            <div id="analogousPalette"></div>
+        </div>
+
+        <!--MONOCHROMATIC PALETTE-->
+        <div class="palette-section">
+            <h3>Monochromatic</h3>
+            <div id="monochromaticPalette"></div>
+        </div>
+
+    </section>
+
+
+    <!--SAVE PALETTE FORM-->
+    <section class="form-section">
+        <h2>Save Palette</h2>
+        <form id="paletteForm">
+
+            <div class="form-group">
+                <label for="paletteName">Palette Name</label>
+                <input type="text" id="paletteName" placeholder="Enter Palette Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paletteCategory">Palette Type</label>
+                <select id="paletteCategory" required>
+                    <option value="">Select Palette Type</option>
+                    <option value="complementary">Complementary</option>
+                    <option value="analogous">Analogous</option>
+                    <option value="monochromatic">Monochromatic</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="creatorName">Created By</label>
+                <input type="text" id="creatorName" placeholder="Enter Creator Name" required>
+            </div>
+
+            <button type="submit" id="savePaletteButton">Save Palette</button>
+
+        </form>
+    </section>
+
+
+    <!--TOAST NOTIFICATION-->
+    <div id="toast"></div>
+
+
+    <!--FOOTER-->
+    <footer class="main-footer">
         <p class="footer-text">Explore the harmony of colors — where creativity meets perfect palettes.</p>
         <p class="copyright">&copy; 2026 ColorSync | Designed for creative color exploration</p>
     </footer>
 
-<!-- ===== JS ===== -->
-<script src="Ngenerator.js"></script>
+
+    <!--JAVASCRIPT-->
+    <script src="index.js"></script>
 
 </body>
-</html>
+</html>>
